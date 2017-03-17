@@ -140,12 +140,13 @@
 <p>云散长空雨过，雪消寒谷春生。</p>
 <p>但觉身如水洗，不知心似冰清。</p>
 <p>我喜欢憨山大师的短诗，在云散雪清的那一刻，一切都是明明白白了。</p>
-<h2 id="你三十年来都跑同一条新闻也罢，你二十年来都坐在同一个银行椅子也罢，你的日子一直在转圈圈也罢，只要在某一个特别的早晨，有了察觉，你的轮回在那一刻，就跨成一道彩虹！"><a href="#你三十年来都跑同一条新闻也罢，你二十年来都坐在同一个银行椅子也罢，你的日子一直在转圈圈也罢，只要在某一个特别的早晨，有了察觉，你的轮回在那一刻，就跨成一道彩虹！" class="headerlink" title="你三十年来都跑同一条新闻也罢，你二十年来都坐在同一个银行椅子也罢，你的日子一直在转圈圈也罢，只要在某一个特别的早晨，有了察觉，你的轮回在那一刻，就跨成一道彩虹！"></a>你三十年来都跑同一条新闻也罢，你二十年来都坐在同一个银行椅子也罢，你的日子一直在转圈圈也罢，只要在某一个特别的早晨，有了察觉，你的轮回在那一刻，就跨成一道彩虹！</h2><p>来源:<br>孤独是生命的礼物<br>作者: 林清玄</p>
+<p>你三十年来都跑同一条新闻也罢，你二十年来都坐在同一个银行椅子也罢，你的日子一直在转圈圈也罢，只要在某一个特别的早晨，有了察觉，你的轮回在那一刻，就跨成一道彩虹！</p>
+<p>来源:<br>孤独是生命的礼物<br>作者: 林清玄</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/17/眼前的轮回/" data-id="cj0dmtwe000008rznvvk8pfmi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/17/眼前的轮回/" data-id="cj0dnfzje0005eeznzqab0w6u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/闲杂/">闲杂</a></li></ul>
@@ -157,12 +158,16 @@
 
 
   
-    <article id="javascript-设计模式" class="article article-type-javascript" itemscope itemprop="blogPost">
+    <article id="post-javascript设计模式" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/03/16/设计模式/" class="article-date">
+    <a href="/2017/03/16/javascript设计模式/" class="article-date">
   <time datetime="2017-03-16T09:03:41.000Z" itemprop="datePublished">2017-03-16</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -171,7 +176,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/16/设计模式/">设计模式</a>
+      <a class="article-title" href="/2017/03/16/javascript设计模式/">javascript设计模式</a>
     </h1>
   
 
@@ -191,12 +196,17 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">特权属性和方法：</div><div class="line">创建属性和方法时使用的this关键字，因为这些方法定义在构造器的作用域中，所以它们可以访问到私有属性和方法；</div><div class="line">只有那些需要直接访问私有成员的方法才应该被设计为特权方法。</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">共有属性和方法：</div><div class="line">直接链在prototype上的属性和方法，不可以访问构造器内的私有成员，可以访问特权成员，*子类会继承所有的共有方法*。</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">共有静态属性和方法：</div><div class="line">最好的理解方式就是把它想象成一个命名空间，实际上相当于把构造器作为命名空间来使用。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* -- 封装 -- */</span></div><div class="line"><span class="keyword">var</span> _packaging = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//私有属性和方法</span></div><div class="line">    <span class="keyword">var</span> name = <span class="string">'privateName'</span>;</div><div class="line">    <span class="keyword">var</span> someMethod = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// some code...</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//特权属性和方法</span></div><div class="line">    <span class="keyword">this</span>.title = <span class="string">'JavaScript Design Patterns'</span>;</div><div class="line">    <span class="keyword">this</span>.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> name;</div><div class="line">    &#125;</div><div class="line"> &#125;</div><div class="line"></div><div class="line"><span class="comment">//共有静态属性和方法</span></div><div class="line">_packaging._name = <span class="string">'publicName'</span>;</div><div class="line">_packaging.logName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(_packaging._name);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//共有属性和方法</span></div><div class="line">_packaging.prototype = &#123;</div><div class="line">    <span class="attr">init</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="comment">// ...</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>继承本身就是一个抽象的话题，在JavaScript中继承更是一个复杂的话题，因为JavaScript想要实现继承有两种实现方式，分别是类式继承和原型式继承，每种实现的方式都需要采取不少措施，下面本人通过分析例子的方式讲解JavaScript中这个很重要的话题。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/03/16/设计模式/" data-id="cj0dmtwgi00058rznnh0vrf97" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/03/16/javascript设计模式/" data-id="cj0dnfzga0000eeznc4za5tkz" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
     </footer>
   </div>
   
@@ -213,7 +223,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/闲杂/">闲杂</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/闲杂/">闲杂</a></li></ul>
     </div>
   </div>
 
@@ -223,7 +233,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/闲杂/">闲杂</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闲杂/">闲杂</a></li></ul>
     </div>
   </div>
 
@@ -233,7 +243,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/闲杂/" style="font-size: 10px;">闲杂</a>
+      <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/闲杂/" style="font-size: 10px;">闲杂</a>
     </div>
   </div>
 
@@ -259,7 +269,7 @@
           </li>
         
           <li>
-            <a href="/2017/03/16/设计模式/">设计模式</a>
+            <a href="/2017/03/16/javascript设计模式/">javascript设计模式</a>
           </li>
         
       </ul>
