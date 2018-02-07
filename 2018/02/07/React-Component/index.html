@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="React," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Components让你把UI分解成独立的，可复用的小块，想象每一小块都处于隔离状态。React.Component是React提供的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React.Component">
+<meta property="og:url" content="http://yoursite.com/2018/02/07/React-Component/index.html">
+<meta property="og:site_name" content="supermanbin">
+<meta property="og:description" content="Components让你把UI分解成独立的，可复用的小块，想象每一小块都处于隔离状态。React.Component是React提供的">
+<meta property="og:updated_time" content="2018-02-07T07:47:10.770Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React.Component">
+<meta name="twitter:description" content="Components让你把UI分解成独立的，可复用的小块，想象每一小块都处于隔离状态。React.Component是React提供的">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/02/07/React-Component/"/>
+
+
+
+
+
+  <title>React.Component | supermanbin</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">supermanbin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/07/React-Component/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="fengbin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="supermanbin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">React.Component</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-07T15:45:16+08:00">
+                2018-02-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/React官方翻译/" itemprop="url" rel="index">
+                    <span itemprop="name">React官方翻译</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><code>Components</code>让你把UI分解成独立的，可复用的小块，想象每一小块都处于隔离状态。<code>React.Component</code>是React提供的</p>
+<a id="more"></a>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><code>React.Component</code>是一个基础类，所以直接继承它并没有多大意义。相反的，你应该子类化它，至少要定义一个<code>render()</code>方法。<br>通常情况下，您可以将一个<code>React.Component</code>定义为一个普通的JavaScript类：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Greeting</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> &lt;h1&gt;Hello, &#123;this.props.name&#125;&lt;/h1&gt;;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果你还没有使用ES6，您可以改用<a href="https://reactjs.org/docs/react-api.html#createclass" target="_blank" rel="external">create-react-class</a>模块。 看看<a href="https://reactjs.org/docs/react-without-es6.html" target="_blank" rel="external">Using React without ES6</a>来了解更多。</p>
+<p>==<strong>请注意，我们不建议创建您自己的基本组件类</strong>==<br>代码重用主要是通过组合而不是React中的继承来实现的，看看<a href="https://reactjs.org/docs/composition-vs-inheritance.html" target="_blank" rel="external">这些常见的场景</a>来感受一下如何使用构图。</p>
+<h3 id="组件生命周期"><a href="#组件生命周期" class="headerlink" title="组件生命周期"></a>组件生命周期</h3><p>每个组件都有几个<code>生命周期方法</code>，您可以在进程中的某些特定时间重写以运行代码。以<code>&#39;will&#39;</code>为前缀的方法在事件发生之前被调用，以<code>&#39;did&#39;</code>为前缀的方法在事件发生之后被调用。</p>
+<h4 id="Mounting-装载"><a href="#Mounting-装载" class="headerlink" title="Mounting 装载"></a>Mounting 装载</h4><p>当创建一个组件的实例并将其插入到DOM中时，将调用这些方法：</p>
+<ul>
+<li>constructor()</li>
+<li>componentWillMount()</li>
+<li>render()</li>
+<li>componentDidMount()</li>
+</ul>
+<h4 id="Updating-更新"><a href="#Updating-更新" class="headerlink" title="Updating 更新"></a>Updating 更新</h4><p>更新可以由<code>props</code>或<code>state</code>态的更改引起。 当一个组件被重新渲染时，这些方法被调用：</p>
+<ul>
+<li>componentWillReceiveProps()</li>
+<li>shouldComponentUpdate()</li>
+<li>componentWillUpdate()</li>
+<li>render()</li>
+<li>componentDidUpdate()</li>
+</ul>
+<h4 id="Unmounting-卸载"><a href="#Unmounting-卸载" class="headerlink" title="Unmounting 卸载"></a>Unmounting 卸载</h4><p>从DOM中删除组件时调用此方法：</p>
+<ul>
+<li>componentWillUnmount()</li>
+</ul>
+<h4 id="Error-Handling-错误处理"><a href="#Error-Handling-错误处理" class="headerlink" title="Error Handling 错误处理"></a>Error Handling 错误处理</h4><p>在渲染期间，生命周期方法或任何子组件的构造函数中发生错误时调用此方法。</p>
+<ul>
+<li>componentDidCatch()</li>
+</ul>
+<h3 id="Other-APIs"><a href="#Other-APIs" class="headerlink" title="Other APIs"></a>Other APIs</h3><p>每个组件还提供一些其他API：</p>
+<ul>
+<li>setState()</li>
+<li>forceUpdate()</li>
+</ul>
+<h3 id="Class-Properties-类的属性"><a href="#Class-Properties-类的属性" class="headerlink" title="Class Properties 类的属性"></a>Class Properties 类的属性</h3><ul>
+<li>defaultProps</li>
+<li>displayName</li>
+</ul>
+<h3 id="Instance-Properties-接口属性"><a href="#Instance-Properties-接口属性" class="headerlink" title="Instance Properties 接口属性"></a>Instance Properties 接口属性</h3><ul>
+<li>props</li>
+<li>state</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><h3 id="render"><a href="#render" class="headerlink" title="render()"></a>render()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">render()</div></pre></td></tr></table></figure>
+<p><code>render()</code>方法是必需的。</p>
+<p>调用时，应检查this.props和this.state并返回以下类型之一：</p>
+<ul>
+<li><strong>React elements</strong> 一般通过JSX创建。标签可以是原生的DOM组件(<code>&lt;div /&gt;</code>)，也可以是自定义的复合组件(<code>&lt;MyComponent /&gt;</code>)。</li>
+<li><strong>String and numbers</strong> 这些在DOM中被渲染为文本节点。</li>
+<li><strong>Portals</strong> 由<a href="https://reactjs.org/docs/portals.html" target="_blank" rel="external">ReactDOM.createPortal</a>创建。</li>
+<li><strong>null</strong> 什么都不渲染，或者渲染为空。</li>
+<li><strong>Booleans</strong> 什么都不渲染，或者渲染为空。(大多存在支持<code>return test &amp;&amp; &lt;Child /&gt;</code>模式，其中<code>test</code>是布尔值)</li>
+</ul>
+<p>当返回值为<code>null</code>或<code>false</code>，<code>ReactDOM.findDOMNode(this)</code>将返回<code>null</code>.</p>
+<p>render()函数应该保持纯净(render()是个纯函数)，意味着不会修改组件的状态，每次调用它都返回相同的结果，并且不会直接与浏览器交互。如果你需要与浏览器直接交互，请在<code>componentDidMount()</code>或者其它生命周期的方法中执行你的工作。保持<code>render()</code>函数的纯洁性使组件更容易理解。</p>
+<blockquote>
+<p><strong>注意</strong></p>
+<p>如果<code>shouldComponentUpdate()</code>返回false，render()将不被调用。</p>
+</blockquote>
+<h4 id="代码片段"><a href="#代码片段" class="headerlink" title="代码片段"></a>代码片段</h4><p>您也可以使用数组从<code>render()</code>中返回多个元素</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">render() &#123;</div><div class="line">    return [</div><div class="line">        &lt;li key="A"&gt;First item&lt;/li&gt;,</div><div class="line">        &lt;li key="B"&gt;Second item&lt;/li&gt;,</div><div class="line">        &lt;li key="C"&gt;Third item&lt;/li&gt;,</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注意</strong></p>
+<p>不要忘记给片段里的元素<a href="https://reactjs.org/docs/lists-and-keys.html#keys" target="_blank" rel="external">add keys</a> 已避免<code>key warning</code></p>
+</blockquote>
+<p>直到<a href="https://reactjs.org/blog/2017/11/28/react-v16.2.0-fragment-support.html" target="_blank" rel="external">React 16.2.0</a>版本后，同样也可以使用<a href="https://reactjs.org/docs/fragments.html" target="_blank" rel="external">fragments</a>来完成，这些片段不需要静态项目的键：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">render() &#123;</div><div class="line">  <span class="keyword">return</span> (</div><div class="line">    &lt;React.Fragment&gt;</div><div class="line">      &lt;li&gt;First item&lt;/li&gt;</div><div class="line">      &lt;li&gt;Second item&lt;/li&gt;</div><div class="line">      &lt;li&gt;Third item&lt;/li&gt;</div><div class="line">    &lt;/React.Fragment&gt;</div><div class="line">  );</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="constructor-构造函数"><a href="#constructor-构造函数" class="headerlink" title="constructor()构造函数"></a>constructor()构造函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">constructor</span>(props)</div></pre></td></tr></table></figure>
+<p>React组件的构造函数在挂载之前被调用。 在实现React.Component子类的构造函数时，应该在任何其他语句之前调用super（props）。 否则，this.props在构造函数中将是undefined，这会引起bugs。</p>
+<p>在构造函数内避免引入任何副作用和订阅(subscriptions)。对于这些用例，使用<code>componentDidMount()</code>代替。(这一段的翻译狗屁不通)</p>
+<p>构造函数是初始化state的正确位置。因此，只需给<code>this.state</code>分配个对象；不要尝试从构造函数里调用<code>setState()</code>。构造函数也经常用于为类实例绑定事件处理程序(event handlers)。</p>
+<p>如果你不初始化state也不绑定方法，你不需要为你的React组件实现一个构造器。</p>
+<p>极少数情况下，可以根据props初始化state。这有效的复刻了这些属性，并且用最初的属性设置了状态。这有一个有效的React.Component子类构造函数的例子：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">constructor</span>(props) &#123;</div><div class="line">  <span class="keyword">super</span>(props);</div><div class="line">  <span class="keyword">this</span>.state = &#123;</div><div class="line">    <span class="attr">color</span>: props.initialColor</div><div class="line">  &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>小心这种模式，因为任何props更新都不会使state为最新状态。而不是将props同步到state，你经常想要解除<a href="https://reactjs.org/docs/lifting-state-up.html" target="_blank" rel="external">状态提升(lift the state up)</a>。</p>
+<p>如果你想fork props来给state使用，你可能要实现<code>componentWillReceiveProps(nextProps)</code>来保持state为最新状态。但是提升状态通常更容易，并且更少出现错误。</p>
+<h3 id="componentWillMount"><a href="#componentWillMount" class="headerlink" title="componentWillMount()"></a>componentWillMount()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">componentWillMount()</div></pre></td></tr></table></figure>
+<p>在组件安装发生(mounting occurs)之前立即调用<code>componentWillMount()</code>。它是在<code>render()</code>方法之前调用。因此在此方法中同步调用setState（）不会触发额外的渲染。一般来说，我们建议使用constructor()替代。</p>
+<blockquote>
+<p><strong>自己的理解</strong></p>
+<p>componentWillMount()是在render()之前调用，并且在componentWillMount()中使用setState()是不会触发界面重新渲染的。官方建议使用constructor()方法替代componentWillMount()的一些作用。</p>
+</blockquote>
+<p>在这个函数内避免引入任何副作用和订阅(subscriptions)。对于这些用例，使用componentDidMount()代替。</p>
+<p>这是在服务端渲染上调用的唯一的生命周期钩子。</p>
+<h3 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount()"></a>componentDidMount()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">componentDidMount()</div></pre></td></tr></table></figure>
+<p>在组件安装(mounted)后立即调用componentDidMount()。需要DOM节点的初始化都应在这里。如果你需要从远程端点加载数据，这里是一个初始化网络请求的好地方。</p>
+<p>这个方法也是一个订阅(subscriptions)的好地方。如果你在发出了订阅，别忘了在<code>componentWillUnmount()</code>里取消订阅(unsubscribe)。</p>
+<p>在这个方法里调用<code>setState()</code>将触发额外的渲染。但这个方法会在浏览器更新屏幕之前发生。这保证即使<code>render()</code>在这种情况下被调用两次，用户也不会看到中间状态。要小心的使用这种模式因为这常常是引起性能问题的原因。It can, however, be necessary for cases like modals and tooltips when you need to measure a DOM node before rendering something that depends on its size or position.</p>
+<h3 id="componentWillReceiveProps"><a href="#componentWillReceiveProps" class="headerlink" title="componentWillReceiveProps()"></a>componentWillReceiveProps()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">componentWillReceiveProps(nextProps)</div></pre></td></tr></table></figure>
+<p>componentWillReceiveProps()在组件装载后(mounted)接收新props前被调用。++如果您需要更新状态以响应prop更改++(比如，重置状态)，你可以比较<code>this.props()</code>和<code>nextProps()</code>，并在此方法中使用<code>this.setState()</code>执行状态转换。</p>
+<p>请注意，即使props尚未更改，React也可能调用此方法，因此如果您只想处理更改，请务必比较当前值和下一个值。父组件导致组件重新渲染时，可能会发生这种情况。</p>
+<p>在装载时或装载中(during mounting)，React不会调用<code>componentWillReceiveProps()</code>和初始化props。只有在一些组件的props要更新时才会调用此方法。调用<code>this.setState()</code>一般不会触发<code>componentWillReceiveProps()</code>。</p>
+<h3 id="shouldComponentUpdate"><a href="#shouldComponentUpdate" class="headerlink" title="shouldComponentUpdate()"></a>shouldComponentUpdate()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">shouldComponentUpdate(nextProps, nextState)</div></pre></td></tr></table></figure>
+<p>使用shouldComponentUpdate（）让React知道组件的输出是否不受当前state或props变化的影响。 默认行为是在每次状态更改时重新呈现，在绝大多数情况下，您应该依靠默认行为。</p>
+<p>在组件渲染前，接收到新的props或state时会调用<code>shouldComponentUpdate()</code>。返回值默认是<code>true</code>。初始化<code>render()</code>或当<code>forceUpdate()</code>被应用时不会调用此方法。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/React/" rel="tag"># React</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/07/JavaScript的实例化与继承：请停止使用new关键字/" rel="next" title="JavaScript的实例化与继承：请停止使用new关键字">
+                <i class="fa fa-chevron-left"></i> JavaScript的实例化与继承：请停止使用new关键字
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">fengbin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#组件生命周期"><span class="nav-number">1.1.</span> <span class="nav-text">组件生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Mounting-装载"><span class="nav-number">1.1.1.</span> <span class="nav-text">Mounting 装载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Updating-更新"><span class="nav-number">1.1.2.</span> <span class="nav-text">Updating 更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Unmounting-卸载"><span class="nav-number">1.1.3.</span> <span class="nav-text">Unmounting 卸载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Error-Handling-错误处理"><span class="nav-number">1.1.4.</span> <span class="nav-text">Error Handling 错误处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Other-APIs"><span class="nav-number">1.2.</span> <span class="nav-text">Other APIs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class-Properties-类的属性"><span class="nav-number">1.3.</span> <span class="nav-text">Class Properties 类的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instance-Properties-接口属性"><span class="nav-number">1.4.</span> <span class="nav-text">Instance Properties 接口属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#render"><span class="nav-number">2.1.</span> <span class="nav-text">render()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码片段"><span class="nav-number">2.1.1.</span> <span class="nav-text">代码片段</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#constructor-构造函数"><span class="nav-number">2.2.</span> <span class="nav-text">constructor()构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#componentWillMount"><span class="nav-number">2.3.</span> <span class="nav-text">componentWillMount()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#componentDidMount"><span class="nav-number">2.4.</span> <span class="nav-text">componentDidMount()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#componentWillReceiveProps"><span class="nav-number">2.5.</span> <span class="nav-text">componentWillReceiveProps()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shouldComponentUpdate"><span class="nav-number">2.6.</span> <span class="nav-text">shouldComponentUpdate()</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">fengbin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
